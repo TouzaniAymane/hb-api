@@ -91,8 +91,8 @@ app.get('/status', (req, res) => {
     latencia: `${averageResponseTime} ms`,
     totalRequests: totalRequests,
     totalVisitors: totalVisitors,
-    creator: 'BrunoSobrino',
-    phoneNumber: '+52 1 999 612 5657'
+    creator: 'TouzaniAymane',
+    phoneNumber: '+212 660 13 15 36'
   };
   const formattedResponse = JSON.stringify(response, null, 2);
   res.setHeader('Content-Type', 'application/json');
@@ -136,7 +136,7 @@ let isError = false;
 async function checkRepoUpdates() {
   if (isError) return;
   try {
-    const response = await axios.get(`https://api.github.com/repos/BrunoSobrino/api/commits?per_page=1`);
+    const response = await axios.get(`https://api.github.com/repos/TouzaniAymane/hb-api/commits?per_page=1`);
     const { sha } = response.data[0];
     if (sha !== previousCommitSHA) {
       const stdout = execSync('git pull > /dev/null 2>&1');
@@ -154,8 +154,8 @@ app.listen(port, function() {
     const line = chalk.yellow('==========================================');
     const serverUrl = 'http://localhost:' + port;
     const serverMessage = chalk.green.bold('| Server activo: ') + chalk.blue.bold(serverUrl);
-    const creatorMessage = chalk.magenta.bold('| Creador: BrunoSobrino');
-    const numberMessage = chalk.magenta.bold('| Numero: +52 1 999 612 5657');
+    const creatorMessage = chalk.magenta.bold('| Creador: TouzaniAymane');
+    const numberMessage = chalk.magenta.bold('| Numero: +212 660 13 15 36');
     const apiMessage = chalk.red.bold('|          "Api Rest Free"');
     console.log(chalk.yellow(line));
     console.log(apiMessage);
