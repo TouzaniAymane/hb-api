@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 const axios = require('axios');
 const translate = require('@vitalets/google-translate-api');
 
-async function chatgpt(text, lenguaje = 'es') {
+async function chatgpt(text, lenguaje = 'ar') {
   if (!text) {
     return {
       status: false,
@@ -11,7 +11,7 @@ async function chatgpt(text, lenguaje = 'es') {
   }    
   const result = {
     status: true,
-    resultado: "",
+    GX: "",
   };
   const apiEndpoints = [
     {
@@ -19,7 +19,7 @@ async function chatgpt(text, lenguaje = 'es') {
       processResponse: async (data) => {
         if (data?.result != 'error' && data?.result != '' && data?.result != undefined && data?.result) {
           const translatedResult = await translate(data.result, { to: lenguaje, autoCorrect: true });
-          result.resultado = translatedResult.text.trim();
+          result.GX = translatedResult.text.trim();
         }
       },
     },
@@ -28,7 +28,7 @@ async function chatgpt(text, lenguaje = 'es') {
       processResponse: async (data) => {
         if (data?.respon != 'error' && data?.respon != '' && data?.respon != undefined && data?.respon) {
           const translatedResult = await translate(data.respon, { to: lenguaje, autoCorrect: true });
-          result.resultado = translatedResult.text.trim();
+          result.GX = translatedResult.text.trim();
         }
       },
     },
@@ -50,7 +50,7 @@ for (const apiEndpoint of apiEndpoints) {
       const responseData = await response.json();
       if (responseData) {
         await apiEndpoint.processResponse(responseData);
-        if (result.resultado) {
+        if (result.GX) {
           result.resultado = result.resultado;
           return result;
         }
@@ -59,7 +59,7 @@ for (const apiEndpoint of apiEndpoints) {
   } catch {}
 }
   result.status = false;
-  result.resultado = "Error en todas las APIs";
+  result.GX = "Error en todas las APIs";
   return result;
 }
 
@@ -72,7 +72,7 @@ async function gpt(content, senderName = 'null', prompt, lenguaje = 'es') {
   }    
   const result = {
     status: true,
-    resultado: "",
+    GX: "",
   };
   /*let url = 'https://c3.a0.chat/v1/chat/gpt/';
   let headers = {
