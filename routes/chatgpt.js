@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   const inputText = req.query.text;
   const senderName = req.query.name || ''; 
   const prompt = req.query.prompt || ''; 
-  const lenguaje = req.query.lenguaje || 'ar'; 
+  const lenguaje = req.query.lenguaje || 'en'; 
    try {
     if (!inputText) {
       const errorResponse = {
