@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <meta property="og:image" content="https://github.com/BrunoSobrino.png">
+    <meta property="og:image" content="https://github.com/gxaymenofc.png">
     <title>API | Login</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -45,18 +45,18 @@
         <div class="contenido-tab">
             <!-- Iniciar Sesion -->
             <div id="iniciar-sesion">
-                <h1>Iniciar Sesión</h1>
+                <h1>Login</h1>
                 <form action="#" method="post" id="logg">
                     <div class="contenedor-input">
                         <label>
-                            Correo <span class="req">*</span>
+                            Email <span class="req">*</span>
                         </label>
                         <input type="text" required id="logmail">
                     </div>
 
                     <div class="contenedor-input">
                         <label>
-                            Contraseña <span class="req">*</span>
+                            Password <span class="req">*</span>
                         </label>
                         <input type="password" required id="logpass">
                     </div>
@@ -68,7 +68,7 @@
 
             <!-- Registrarse -->
             <div id="registrarse">
-                <h1>Registrarse</h1>
+                <h1>Register</h1>
                 <form action="#" method="post" id="regg">
                     <div class="contenedor-input">
                             <label>
@@ -78,14 +78,14 @@
                     </div>
                     <div class="contenedor-input">
                         <label>
-                            Contraseña <span class="req">*</span>
+                            Password <span class="req">*</span>
                         </label>
                         <input type="password" required id="reggpass">
                     </div>
 
                     <div class="contenedor-input">
                         <label>
-                            Repetir Contraseña <span class="req">*</span>
+                            Repeat Password <span class="req">*</span>
                         </label>
                         <input type="password" required id="reggpass2">
                     </div>
@@ -98,16 +98,16 @@
     <!-- Contenedor de Contacto -->
     <div class="contenedor-contacto">
         <div class="contacto-info">
-            <a href="https://wa.me/5219996125657" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://github.com/BrunoSobrino" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.paypal.com/paypalme/TheShadowBrokers133" target="_blank"><i class="fab fa-paypal"></i></a>
+            <a href="https://wa.me/212660131536" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/gxaymenofcjkg" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com/gxaymenofcjkg" target="_blank"><i class="fab fa-facebook"></i></a>
         </div>
     </div>        
    <script>
 
     async function requestReset() {
       if (!logmail.value) {
-        alert("[❗] Ingrese su correo");
+        alert("[❗] Type the email");
         return;
       }
                 
@@ -133,7 +133,7 @@
                 }
               })
               .catch(error => {
-                alert("[⚠️] Error en el registro, reporte el error en Github.");
+                alert("[⚠️] Error on the register, reporte the error on Github.");
               });
           });
         });
@@ -156,7 +156,7 @@
             }
           })
           .catch(error => {
-            alert("[⚠️] Error en el registro, reporte el error en Github.");
+            alert("[⚠️] Error on the register, reporte the error on Github.");
           });
       }
     }
@@ -169,7 +169,7 @@
   }
 
   if (reggpass.value.length < 8) {
-    alert("[❗] La contraseña debe tener al menos 8 caracteres.");
+    alert("[❗] The password most be more than 8 caracters.");
     return;
   }        
         
@@ -224,12 +224,12 @@
       if (!data.status) {
         alert(data.message);
       } else {
-        alert("[❗] Usuario registrado con éxito, revise su bandeja de entrada o de spam en su correo para validarlo.");
+        alert("[❗] User successfully registered, check your inbox or spam in your email to validate it.");
         window.location.reload()
       }
     })
     .catch(error => {
-      alert("[⚠️] Error en el registro, reporte el error en Github.");
+      alert("[⚠️] Error on the register, reporte the error on Github.");
     });
     }
 
@@ -257,7 +257,7 @@ logg.addEventListener("submit", function(event) {
       }
     })
     .catch(error => {
-      alert("[⚠️] Error en el login, reporte el error en Github.");
+      alert("[⚠️] Error on the login, reporte the error on Github.");
     });    
 });
 
